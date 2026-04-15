@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function JobForm({ addJob }) {
-  const [formData, setFormData] = [
-    { company: "", role: "", status: "", appliedDate: "", link: "" },
-  ];
+  const [formData, setFormData] = useState({
+    company: "",
+    role: "",
+    status: "",
+    appliedDate: "",
+    link: "",
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
     if (

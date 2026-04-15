@@ -16,7 +16,7 @@ export default function App() {
   };
   return (
     <div className="min-h-screen min-w-screen bg-slate-100 py-10 px-4">
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8">
         <Headers total={jobs.length} />
         <JobForm addJob={addJob} />
         <JobTable jobs={jobs} />
