@@ -1,7 +1,9 @@
 import React from "react";
 import JobRow from "./JobRow";
 
-export default function JobTable({ jobs }) {
+export default function JobTable({ jobs,deleteJob }) {
+
+
   return (
     <div className="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-200">
@@ -19,12 +21,13 @@ export default function JobTable({ jobs }) {
               <th className="px-6 py-4 font-semibold">Status</th>
               <th className="px-6 py-4 font-semibold">Applied Date</th>
               <th className="px-6 py-4 font-semibold">Link</th>
+              <th className="px-6 py-4 font-semibold">Remove</th>
             </tr>
           </thead>
 
           <tbody className="divide-y divide-slate-200">
             {jobs.length > 0 ? (
-              jobs.map((job) => <JobRow key={job.id} job={job} />)
+              jobs.map((job) => <JobRow key={job.id} job={job} deleteJob={deleteJob} />)
             ) : (
               <tr>
                 <td

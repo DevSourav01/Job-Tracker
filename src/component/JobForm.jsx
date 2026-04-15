@@ -6,6 +6,7 @@ export default function JobForm({ addJob }) {
     role: "",
     status: "Applied",
     appliedDate: "",
+    platform: "",
     link: "",
   });
   const handleSubmit = (e) => {
@@ -18,7 +19,7 @@ export default function JobForm({ addJob }) {
       !formData.link.trim()
     )
       return;
-      console.log("addJob:", addJob, typeof addJob);
+
     addJob(formData);
     setFormData({
       company: "",
@@ -26,6 +27,7 @@ export default function JobForm({ addJob }) {
       status: "Applied",
       appliedDate: "",
       link: "",
+      platform: "",
     });
   };
   const handleChange = (e) => {
@@ -82,14 +84,29 @@ export default function JobForm({ addJob }) {
           onChange={handleChange}
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
-
+        <select
+          name="platform"
+          value={formData.platform}
+          onChange={handleChange}
+          className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">Select Platform</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Naukri">Naukri</option>
+          <option value="Indeed">Indeed</option>
+          <option value="Foundit">Foundit</option>
+          <option value="Internshala">Internshala</option>
+          <option value="Company Website">Company Website</option>
+          <option value="Referral">Referral</option>
+          <option value="Other">Other</option>
+        </select>
         <input
           type="url"
           name="link"
           placeholder="Job Link"
           value={formData.link}
           onChange={handleChange}
-          className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 md:col-span-2"
+          className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <button
