@@ -4,7 +4,7 @@ export default function JobForm({ addJob }) {
   const [formData, setFormData] = useState({
     company: "",
     role: "",
-    status: "",
+    status: "Applied",
     appliedDate: "",
     link: "",
   });
