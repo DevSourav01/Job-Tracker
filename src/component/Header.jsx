@@ -1,6 +1,6 @@
 export default function Header({ total }) {
   return (
-    <div className="bg-white shadow-md rounded-2xl p-6 border border-slate-200 z-100">
+    <div className="bg-white shadow-md rounded-2xl p-6 border border-slate-200">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-slate-800">Job Tracker</h1>
