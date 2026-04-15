@@ -18,6 +18,7 @@ export default function JobForm({ addJob }) {
       !formData.link.trim()
     )
       return;
+      console.log("addJob:", addJob, typeof addJob);
     addJob(formData);
     setFormData({
       company: "",

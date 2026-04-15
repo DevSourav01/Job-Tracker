@@ -4,7 +4,7 @@ export default function JobRow({ job }) {
   return (
     <tr className="border-b border-slate-200 hover:bg-slate-50 transition duration-200">
       <td className="px-6 py-4 font-medium text-slate-800">
-        {job.Company}
+        {job.company}
       </td>
       <td className="px-6 py-4 text-slate-600">
         {job.role}
@@ -15,7 +15,7 @@ export default function JobRow({ job }) {
         </span>
       </td>
       <td className="px-6 py-4 text-slate-600">
-        {job.AppliedDate}
+        {job.appliedDate}
       </td>
       <td className="px-6 py-4">
         <a
