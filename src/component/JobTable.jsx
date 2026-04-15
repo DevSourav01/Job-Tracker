@@ -1,7 +1,7 @@
 import React from "react";
 import JobRow from "./JobRow";
 
-export default function JobTable({ jobs,deleteJob }) {
+export default function JobTable({ jobs, deleteJob }) {
 
 
   return (
@@ -31,7 +31,7 @@ export default function JobTable({ jobs,deleteJob }) {
             ) : (
               <tr>
                 <td
-                  colSpan="5"
+                  colSpan="6"
                   className="px-6 py-8 text-center text-slate-500"
                 >
                   No job applications added yet.

@@ -25,7 +25,7 @@ export default function JobRow({ job, deleteJob }) {
         <a
           href={job.link}
           target="_blank"
-          rel="noreferrer"
+          rel="noreferrer noopener"
           className="font-medium text-blue-600 hover:text-blue-800 hover:underline"
         >
           View
