@@ -54,6 +54,7 @@ export default function JobForm({ addJob }) {
           placeholder="Company Name"
           value={formData.company}
           onChange={handleChange}
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
@@ -63,6 +64,7 @@ export default function JobForm({ addJob }) {
           placeholder="Job Role"
           value={formData.role}
           onChange={handleChange}
+           required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
@@ -70,6 +72,7 @@ export default function JobForm({ addJob }) {
           name="status"
           value={formData.status}
           onChange={handleChange}
+           required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option>Applied</option>
@@ -82,12 +85,14 @@ export default function JobForm({ addJob }) {
           name="appliedDate"
           value={formData.appliedDate}
           onChange={handleChange}
+           required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
         <select
           name="platform"
           value={formData.platform}
           onChange={handleChange}
+           required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Platform</option>
@@ -106,12 +111,13 @@ export default function JobForm({ addJob }) {
           placeholder="Job Link"
           value={formData.link}
           onChange={handleChange}
+           required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <button
           type="submit"
-          className="md:col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition"
+          className="md:col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl transition hover:cursor-pointer"
         >
           Add Job
         </button>

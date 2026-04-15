@@ -25,7 +25,7 @@ export default function JobRow({ job, deleteJob }) {
         {" "}
         <button
           onClick={() => deleteJob(job.id)}
-          className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg"
+          className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-lg hover:cursor-pointer"
         >
           Remove
         </button>
