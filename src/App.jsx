@@ -1,6 +1,6 @@
-import JobForm from "./component/JobForm";
-import JobTable from "./component/JobTable";
-import Headers from "./component/Header";
+import JobForm from "./components/JobForm";
+import JobTable from "./components/JobTable";
+import Headers from "./components/Header";
 import { useEffect, useState } from "react";
 import { addJobToFirestore, deleteJobFromFirestore, subscribeToJobs } from "../firebaseService";
 
