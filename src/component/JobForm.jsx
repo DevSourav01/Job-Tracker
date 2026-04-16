@@ -9,27 +9,37 @@ export default function JobForm({ addJob }) {
     platform: "",
     link: "",
   });
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (
       !formData.company.trim() ||
       !formData.role.trim() ||
       !formData.status.trim() ||
       !formData.appliedDate.trim() ||
+      !formData.platform.trim() ||
       !formData.link.trim()
-    )
+    ) {
+      alert("Please fill all fields");
       return;
+    }
 
-    addJob(formData);
-    setFormData({
-      company: "",
-      role: "",
-      status: "Applied",
-      appliedDate: "",
-      link: "",
-      platform: "",
-    });
+    try {
+      setFormData({
+        company: "",
+        role: "",
+        status: "Applied",
+        appliedDate: "",
+        platform: "",
+        link: "",
+      });
+      await addJob(formData);
+    } catch (error) {
+      console.error("Failed to add job:", error);
+    }
   };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -64,7 +74,7 @@ export default function JobForm({ addJob }) {
           placeholder="Job Role"
           value={formData.role}
           onChange={handleChange}
-           required
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
@@ -72,27 +82,29 @@ export default function JobForm({ addJob }) {
           name="status"
           value={formData.status}
           onChange={handleChange}
-           required
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         >
-          <option>Applied</option>
-          <option>Interview</option>
-          <option>Rejected</option>
-          <option>Offer</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Rejected">Rejected</option>
+          <option value="Offer">Offer</option>
         </select>
+
         <input
           type="date"
           name="appliedDate"
           value={formData.appliedDate}
           onChange={handleChange}
-           required
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
+
         <select
           name="platform"
           value={formData.platform}
           onChange={handleChange}
-           required
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Platform</option>
@@ -105,13 +117,14 @@ export default function JobForm({ addJob }) {
           <option value="Referral">Referral</option>
           <option value="Other">Other</option>
         </select>
+
         <input
           type="url"
           name="link"
           placeholder="Job Link"
           value={formData.link}
           onChange={handleChange}
-           required
+          required
           className="w-full rounded-xl border border-slate-300 px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
         />
 
