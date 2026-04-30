@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import JobRow from "./JobRow";
 
 export default function JobTable({ jobs, deleteJob }) {
-
-
+  const [search, setSearch] = useState("");
+  const filteredJobs = jobs.filter((job) =>
+    job.company.trim().toLowerCase().includes(search.trim().toLowerCase()),
+  );
   return (
     <div className="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-200">
-        <h2 className="text-2xl font-semibold text-slate-800">
-          Job Applications
-        </h2>
+        <div className="flex justify-between gap-10">
+          <h2 className="text-md md:text-2xl  font-semibold text-slate-800">
+            Applications
+          </h2>
+          <div>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full max-w-sm rounded-lg border border-slate-300 px-4 py-2 text-sm text-slate-700 outline-none placeholder:text-slate-400 focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
+              value={search}
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="overflow-x-auto">
@@ -26,8 +41,10 @@ export default function JobTable({ jobs, deleteJob }) {
           </thead>
 
           <tbody className="divide-y divide-slate-200">
-            {jobs.length > 0 ? (
-              jobs.map((job) => <JobRow key={job.id} job={job} deleteJob={deleteJob} />)
+            {filteredJobs.length > 0 ? (
+              filteredJobs.map((job) => (
+                <JobRow key={job.id} job={job} deleteJob={deleteJob} />
+              ))
             ) : (
               <tr>
                 <td
