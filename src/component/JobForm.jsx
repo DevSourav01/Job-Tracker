@@ -113,6 +113,7 @@ export default function JobForm({ addJob }) {
           <option value="Indeed">Indeed</option>
           <option value="Foundit">Foundit</option>
           <option value="Internshala">Internshala</option>
+           <option value="Internshala">Wellfound</option>
           <option value="Company Website">Company Website</option>
           <option value="Referral">Referral</option>
           <option value="Other">Other</option>
