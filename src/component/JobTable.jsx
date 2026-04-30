@@ -9,7 +9,7 @@ export default function JobTable({ jobs, deleteJob }) {
   return (
     <div className="bg-white shadow-md rounded-2xl border border-slate-200 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-200">
-        <div className="flex justify-between gap-10">
+        <div className="flex justify-between gap-10 items-center">
           <h2 className="text-md md:text-2xl  font-semibold text-slate-800">
             Applications
           </h2>
