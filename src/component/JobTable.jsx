@@ -34,7 +34,7 @@ export default function JobTable({ jobs, deleteJob }) {
               <th className="px-6 py-4 font-semibold">Company</th>
               <th className="px-6 py-4 font-semibold">Role</th>
               <th className="px-6 py-4 font-semibold">Status</th>
-              <th className="px-6 py-4 font-semibold">Applied Date</th>
+              <th className="px-6 py-4 font-semibold whitespace-nowrap">Applied Date</th>
               <th className="px-6 py-4 font-semibold">Link</th>
               <th className="px-6 py-4 font-semibold">Remove</th>
             </tr>
